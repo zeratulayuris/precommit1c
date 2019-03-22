@@ -33,7 +33,7 @@
     И в подкаталоге "src/1/Fixture/Fixture" рабочего каталога существует каталог "Templates"
 
 Сценарий: Разборка файла из заданной папки с указанием информационной базы
-    Когда я выполняю команду "oscript" с параметрами "<КаталогПроекта>/v8files-extractor.os --decompile <КаталогПроекта>/tests/Fixture.epf <РабочийКаталог> --use-designer --ib-connection-string /F<РабочийКаталог>\build\ib"
+    Когда я выполняю команду "oscript" с параметрами "<КаталогПроекта>/v8files-extractor.os --decompile <КаталогПроекта>/tests/Fixture.epf <РабочийКаталог> --use-designer --ib-connection-string /F<РабочийКаталог>/build/ib"
     Тогда в рабочем каталоге существует каталог "Fixture"
     И в подкаталоге "Fixture" рабочего каталога существует файл "fixture.xml"
     И в подкаталоге "Fixture" рабочего каталога существует каталог "Fixture"
@@ -45,7 +45,7 @@
     И я создаю каталог "1" в подкаталоге "bin" рабочего каталога
     И я копирую файл "Fixture.epf" из каталога "tests" проекта в подкаталог "bin/1" рабочего каталога
     И я создаю каталог "src" в рабочем каталоге
-    И я выполняю команду "oscript" с параметрами "<КаталогПроекта>/v8files-extractor.os --decompile <РабочийКаталог>/bin <РабочийКаталог>/src --use-designer --ib-connection-string /F<РабочийКаталог>\build\ib"
+    И я выполняю команду "oscript" с параметрами "<КаталогПроекта>/v8files-extractor.os --decompile <РабочийКаталог>/bin <РабочийКаталог>/src --use-designer --ib-connection-string /F<РабочийКаталог>/build/ib"
     Тогда в рабочем каталоге существует каталог "src/1/Fixture"
     И в подкаталоге "src/1/Fixture" рабочего каталога существует файл "fixture.xml"
     И в подкаталоге "src/1/Fixture" рабочего каталога существует каталог "Fixture"

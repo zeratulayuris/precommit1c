@@ -19,5 +19,5 @@
 Сценарий: Сборка файла из заданной папки с указанием информационной базы
     Когда я создаю каталог "bin" в рабочем каталоге
     И я выполняю команду "vanessa-runner" с параметрами "init-dev"
-    И я выполняю команду "oscript" с параметрами "<КаталогПроекта>\v8files-extractor.os --compile <КаталогПроекта>\src\tests\UseDesigner\fixture <РабочийКаталог>\bin --use-designer --ib-connection-string /F<РабочийКаталог>\build\ib"
+    И я выполняю команду "oscript" с параметрами "<КаталогПроекта>\v8files-extractor.os --compile <КаталогПроекта>\src\tests\UseDesigner\fixture <РабочийКаталог>\bin --use-designer --ib-connection-string /F<РабочийКаталог>/build/ib"
     Тогда в подкаталоге "bin" рабочего каталога существует файл "Fixture.epf"
