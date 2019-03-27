@@ -18,7 +18,7 @@
     И Я выполняю команду "git" с параметрами "config --local core.longpaths true"
     И Я выполняю команду "git" с параметрами <Настройка>
     И Я выполняю команду "oscript" с параметрами '.git/hooks/v8files-extractor.os --git-check-config'
-    Тогда вывод команды "oscript" содержит  "У текущего репозитария не заданы необходимые настройки!"
+    Тогда вывод команды "oscript" содержит "У текущего репозитария не заданы необходимые настройки!"
 
 Примеры:
     |Настройка|
@@ -55,6 +55,19 @@
     И В рабочем каталоге существует файл ".git/hooks/v8files-extractor.os"
     И В рабочем каталоге существует файл ".git/hooks/tools/v8unpack.exe"
     И файл ".git/hooks/pre-commit" в рабочем каталоге содержит "oscript -encoding=utf-8 .git/hooks/v8files-extractor.os --git-precommit src --ib-connection-string /Fc:/test/ib --ib-user UserTest --ib-pwd ********"
+    И вывод команды "oscript" не содержит "У текущего репозитария не заданы необходимые настройки!" 
+
+Сценарий: Установка precommit1c в репозиторий с использованием конфигуратора
+    Когда Я выполняю команду "oscript" с параметрами "<КаталогПроекта>/v8files-extractor.os --install --use-designer"
+    И Я выполняю команду "oscript" с параметрами ".git/hooks/v8files-extractor.os --git-check-config"
+    Тогда В рабочем каталоге существует каталог ".git/hooks"
+    И В рабочем каталоге существует каталог ".git/hooks/v8Reader"
+    И В рабочем каталоге существует каталог ".git/hooks/tools"
+    И В рабочем каталоге существует файл ".git/hooks/v8Reader/V8Reader.epf"
+    И В рабочем каталоге существует файл ".git/hooks/pre-commit"
+    И В рабочем каталоге существует файл ".git/hooks/v8files-extractor.os"
+    И В рабочем каталоге существует файл ".git/hooks/tools/v8unpack.exe"
+    И файл ".git/hooks/pre-commit" в рабочем каталоге содержит "oscript -encoding=utf-8 .git/hooks/v8files-extractor.os --git-precommit src --use-designer"
     И вывод команды "oscript" не содержит "У текущего репозитария не заданы необходимые настройки!" 
 
 Сценарий: Установка precommit1c в репозиторий с указанием сервисной базы и использованием конфигуратора
