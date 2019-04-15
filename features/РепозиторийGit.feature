@@ -13,11 +13,11 @@
     И Я выполняю команду "git" с параметрами 'init'
 
 Структура сценария: Проверка настроек репозитория Git (простой отрицательный) - <Настройка>
-    Когда Я копирую файл "v8files-extractor.os" из каталога "" проекта в подкаталог ".git/hooks" рабочего каталога
+    Дано Я копирую файл "v8files-extractor.os" из каталога "" проекта в подкаталог ".git/hooks" рабочего каталога
     И Я выполняю команду "git" с параметрами "config --local core.quotepath false"
     И Я выполняю команду "git" с параметрами "config --local core.longpaths true"
     И Я выполняю команду "git" с параметрами <Настройка>
-    И Я выполняю команду "oscript" с параметрами '.git/hooks/v8files-extractor.os --git-check-config'
+    Когда Я выполняю команду "oscript" с параметрами '.git/hooks/v8files-extractor.os --git-check-config'
     Тогда вывод команды "oscript" содержит "У текущего репозитария не заданы необходимые настройки!"
 
 Примеры:
@@ -26,10 +26,10 @@
     |config --local core.longpaths false|
 
 Сценарий: Проверка настроек репозитория Git (простой положительный)
-    Когда Я копирую файл "v8files-extractor.os" из каталога "" проекта в подкаталог ".git/hooks" рабочего каталога
+    Дано Я копирую файл "v8files-extractor.os" из каталога "" проекта в подкаталог ".git/hooks" рабочего каталога
     И Я выполняю команду "git" с параметрами "config --local core.quotepath false"
     И Я выполняю команду "git" с параметрами "config --local core.longpaths true"
-    И Я выполняю команду "oscript" с параметрами ".git/hooks/v8files-extractor.os --git-check-config"
+    Когда Я выполняю команду "oscript" с параметрами ".git/hooks/v8files-extractor.os --git-check-config"
     Тогда вывод команды "oscript" не содержит "У текущего репозитария не заданы необходимые настройки!"
 
 Сценарий: Установка precommit1c в репозиторий
